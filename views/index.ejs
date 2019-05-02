@@ -1,0 +1,30 @@
+<% include partials/header%>
+
+  <div class="container">
+
+    <header class="jumbotron">
+      <div class="">
+        <h1>Selamat Datang di TaufiqTour</h1>
+        <p>Pilihan Destinasi Perjalanan di Seluruh Lampung</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <h3>Tour Favorite TaufiqTour </h3
+        <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% tempatWisata.forEach( (tempatWisata) => { %>
+          <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+              <img src="<%= tempatWisata.image %>" alt="" width="500">
+              <div class="caption">
+                <h4> <%= tempatWisata.destinasi %> </h4>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+      </div>
+    </div>
+  </div>
+  
+<% include partials/footer%>

@@ -1,0 +1,19 @@
+<% include ../partials/header-crud%>
+<div class="">
+  <div class="">
+    <h1 style="text-align:center;">Edit Data Pesertas</h1>
+    <div style="width:30%;margin: 25px auto;">
+      <form class="" action="/pesertas/edit/<%= peserta.id %>" method="post">
+        <div class="form-group">
+          <label for="">Nama</label>
+          <input class="form-control" type="text" name="nama" value="<%= peserta.nama %>">
+        </div>
+        <div class="form-group">
+          <label for="">Alamat</label>
+          <input type="text" name="alamat" class="form-control" value="<%= peserta.alamat %>">
+        </div>
+        <button type="submit" name="button">submit</button>
+      </form>
+    </div>
+  </div>
+</div>

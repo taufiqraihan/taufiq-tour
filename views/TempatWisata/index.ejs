@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% include ../partials/header-TempatWisata%>
+    <div class="text-center alert alert-secondary container">
+      <h1>Data TempatWisata</h1>
+      <% if(user.role === 'admin') { %>
+      <% } %>
+      <table class="table table-primary">
+        <thead>
+          <th class="text-center">destinasi</th>
+          <th class="text-center">Paket</th>
+          <th class="text-center">harga</th>
+          <th class="text-center">fasilitas</th>
+          <th class="text-center">fasilitas</th>
+        </thead>
+        <tbody class="table-success">
+          <% for(let i = 0; i < TempatWisatas.length; i++) { %>
+            <tr>
+              <td><%= TempatWisatas[i].destinasi %></td>
+              <td><%= TempatWisatas[i].paket %></td>
+              <td><%= TempatWisatas[i].harga %></td>
+              <td><%= TempatWisatas[i].fasilitas %></td>
+              <td><img src="<%= TempatWisatas[i].image %>" alt="" width="150" ></td>
+            <% if(user.role === 'admin') { %>
+            <td>
+              <a class="btn btn-danger" href="/TempatWisatas/edit/<%=TempatWisatas[i].id%>">edit</a>
+              <a class="btn btn-danger" href="/TempatWisatas/delete/<%=TempatWisatas[i].id%>">hapus </a>
+            </td>
+            <% } %>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

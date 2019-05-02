@@ -1,0 +1,19 @@
+<% include ../partials/header-crud%>
+<div class="container">
+  <div class="">
+    <h1 style="text-align:center;">Tambah Data Pesertas</h1>
+    <div style="width:30%;margin: 25px auto;">
+      <form action="/pesertas/create" method="post">
+        <div class="form-group">
+          <label for="">Nama</label>
+          <input type="text" class="form-control" name="nama" placeholder="nama">
+        </div>
+        <div class="form-group">
+          <label for="">Alamat</label>
+          <input type="text" class="form-control" name="alamat" placeholder="alamat">
+        </div>
+      <button type="submit" name="button">submit</button>
+    </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% include ../partials/header-peserta %>
+    <div class="text-center alert alert-secondary container">
+      <h1>Data Pesertas</h1>
+      <table class="table table-primary">
+        <thead>
+          <th class="text-center">Nama</th>
+          <th class="text-center">Alamat</th>
+        </thead>
+        <tbody class="table-success">
+          <% for(let i = 0; i < pesertas.length; i++) { %>
+            <tr>
+              <td><%= pesertas[i].nama %></td>
+              <td><%= pesertas[i].alamat %></td>
+              <td>
+                <a class="btn btn-danger" style="color: black" href="/pesertas/edit/<%=pesertas[i].id%>">edit</a>
+                <a class="btn btn-danger" style="color: black" href="/pesertas/delete/<%=pesertas[i].id%>">hapus </a>
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
